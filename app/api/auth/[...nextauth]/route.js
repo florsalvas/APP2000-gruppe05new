@@ -11,7 +11,6 @@ const database = await getClient();
 const users = database.collection("users");
 
 export const authOptions = {
-  secret: process.env.NEXT_AUTH_SECRET,
   providers: [
     CredentialsProvider({
         id: "credentials",
