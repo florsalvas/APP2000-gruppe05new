@@ -10,7 +10,7 @@ import { useEffect, useState } from 'react';
 
 const i18nNamespaces = ['mySite', 'Common'];
 
-export default function mySite({ params: { locale } }) {
+export default function MySite({ params: { locale } }) {
     const { t, resources } = initTranslations(locale, i18nNamespaces);
     const { data: session } = useSession();
 

@@ -4,7 +4,7 @@ import Link from 'next/link';
 import styles from './bookingButton.module.css';
 import { useTranslation } from 'react-i18next';
 
-export default function bookingButton() {
+export default function BookingButton() {
   const {t} = useTranslation();
 
     return (
