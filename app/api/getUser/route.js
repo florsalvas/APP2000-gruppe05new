@@ -26,10 +26,9 @@ export async function getTlfByEmail(email) {
 }
 
 export async function GET(req) {
+  const { searchParams } = new URL(req.url);
+  const email = searchParams.get('email');
   try {
-    const { searchParams } = new URL(req.url);
-    const email = searchParams.get('email');
-    
     const allUsers = await getUserByEmail(email);
 
     if (!allUsers.length) {

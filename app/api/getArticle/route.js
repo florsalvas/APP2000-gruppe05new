@@ -9,10 +9,9 @@ async function getArticlesBySection(section) {
 }
 
 export async function GET(req) {
-  try {
-    const { searchParams } = new URL(req.url);
-    const section = searchParams.get('section'); 
-    
+  const { searchParams } = new URL(req.url);
+  const section = searchParams.get('section'); 
+  try {    
     const allArticles = await getArticlesBySection(section);
 
     if (!allArticles.length) {

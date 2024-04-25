@@ -9,10 +9,9 @@ export async function getBookingsByEmail(email) {
 }
 
 export async function GET(req) {
+  const { searchParams } = new URL(req.url);
+  const email = searchParams.get('email');
   try {
-    const { searchParams } = new URL(req.url);
-    const email = searchParams.get('email');
-    
     const allBookings = await getBookingsByEmail(email);
 
     if (!allBookings.length) {
