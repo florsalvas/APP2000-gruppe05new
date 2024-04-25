@@ -2,12 +2,10 @@
 
 import Link from 'next/link';
 import styles from './nav-bar.module.css';
-import { useTranslation } from 'react-i18next';
 import { signOut, useSession } from 'next-auth/react';
 
 export default function NavBar() {
   const { data: session } = useSession();
-  const {t} = useTranslation();
   return (
     <nav className={styles.navBar}>
         <div className={styles.logo}>
@@ -22,32 +20,32 @@ export default function NavBar() {
               <ul className={styles.navList}>
                 <li className={styles.navItem}>
                   <Link href="/" passHref>
-                      {t('navbar_home')}
+                      Hjem
                   </Link>
                 </li>
                 <li className={styles.navItem}>
                   <Link href="/services" passHref>
-                    {t('navbar_services')}
+                    Tjenester
                   </Link>
                 </li>
                 <li className={styles.navItem}>
                   <Link href="/contact" passHref>
-                    {t('navbar_contact')}
+                    Kontakt oss
                   </Link>
                 </li>
                 <li className={styles.navItem}>
                   <Link href="/faq" passHref>
-                    {t('navbar_faq')}
+                    Faq
                   </Link>
                 </li>
                 <li className={styles.navItem}>
                 <Link href="/about" passHref>
-                  {t('navbar_about')}
+                  Om oss
                 </Link>
                 </li>
                 <li className={styles.navItem}>
                 <Link href="/booking" passHref>
-                  {t('navbar_booking')}
+                  Booking
                 </Link>
                 </li>
               </ul>

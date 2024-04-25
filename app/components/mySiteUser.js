@@ -1,33 +1,28 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
 import styles from './mySiteUser.module.css';
 
 export default function User({ userData, orderData }) {
-  const { t } = useTranslation();
-
-  const { email: userEmail, tlf: userTelephone, password: userPassword } = userData;
-  const { email: orderEmail, tlf: orderTelephone, password: orderPassword } = orderData;
+  const { email: userEmail, tlf: userTelephone } = userData;
+  const { email: orderEmail, tlf: orderTelephone } = orderData;
 
   return (
     <>
       <div className={styles.userProfileContainer}>
         <section className={styles.userSection}>
-          <h2>{t('mysite:bruker')}</h2>
+          <h2>Min profil</h2>
           <div className={styles.userInfo}>
-            <p><strong>{t('mysite_email')}:</strong> {userEmail}</p>
-            <p><strong>{t('mysite_telephone')}:</strong> {userTelephone}</p>
-            <p><strong>{t('mysite_password')}:</strong> {userPassword}</p>
+            <p><strong>Email:</strong> {userEmail}</p>
+            <p><strong>Telefon nummer:</strong> {userTelephone}</p>
           </div>
         </section>
       </div>
 
       <div className={styles.userProfileContainer}>
         <section className={styles.userSection}>
-          <h2>{t('mysite:ordre')}</h2>
+          <h2>Mine ordre</h2>
           <div className={styles.userInfo}>
-            <p><strong>{t('mysite_order_')}:</strong> {orderEmail}</p>
-            <p><strong>{t('mysite_order_')}:</strong> {orderTelephone}</p>
-            <p><strong>{t('mysite_order_')}:</strong> {orderPassword}</p>
+            <p><strong>Email:</strong> {orderEmail}</p>
+            <p><strong>Telefon nummer:</strong> {orderTelephone}</p>
           </div>
         </section>
       </div>

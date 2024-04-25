@@ -2,15 +2,12 @@
 import React from 'react';
 import Link from 'next/link';
 import styles from './bookingButton.module.css';
-import { useTranslation } from 'react-i18next';
 
 export default function BookingButton() {
-  const {t} = useTranslation();
-
     return (
         <div className={styles.buttonContainer}>
         <Link href="/booking">
-            <p className={styles.bookingButton}>{t('home_button')}</p>
+            <p className={styles.bookingButton}>Se hva vi har å tilby</p>
         </Link>
         </div>
     );

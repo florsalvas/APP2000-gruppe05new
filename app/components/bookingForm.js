@@ -2,10 +2,8 @@
 
 import React from 'react';
 import styles from './bookingForm.module.css';
-import { useTranslation } from 'react-i18next';
 
 export default function BookingForm({ handleBooking, availableSites }) {
-  const { t } = useTranslation();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -24,12 +22,12 @@ export default function BookingForm({ handleBooking, availableSites }) {
 
   return (
     <div>
-      <h1 className={styles.title}>{t('booking_title')}</h1>
+      <h1 className={styles.title}>Booking</h1>
       <div className={styles.bookingForm}>
         <div className={styles.formWrapper}>
           <form onSubmit={handleSubmit}>
             <div className={styles.bookingItem}>
-              <label htmlFor="PlassNr">{t('booking_area')}</label>
+              <label htmlFor="PlassNr">Booking plass</label>
               <select id="PlassNr" name="PlassNr" required>
                 {availableSites.map(site => (
                   <option key={site} value={site}>{site}</option>
@@ -37,44 +35,36 @@ export default function BookingForm({ handleBooking, availableSites }) {
               </select>
             </div>
             <div className={styles.bookingItem}>
-              <label htmlFor="type">{t('booking_type')}</label>
+              <label htmlFor="type">Type</label>
               <select id="type" name="type" required>
-                <option value="">{t('select_type')}</option>
-                <option value="bobil">{t('motorhome')}</option>
-                <option value="teltplass">{t('tent spot')}</option>
-                <option value="bobil_med_båtkai">{t('motorhome with dock')}</option>
-                <option value="hytteplass">{t('cabin')}</option>
+                <option value="">Velg type</option>
+                <option value="bobil">Bobil</option>
+                <option value="teltplass">Teltplass</option>
+                <option value="bobil_med_båtkai">Bobil med båtkai</option>
+                <option value="hytteplass">Hytte</option>
               </select>
             </div>
             <div className={styles.bookingItem}>
-              <label htmlFor="name">{t('booking_name')}</label>
-              <input type="text" id="name" name="name" placeholder={t('booking_name')} required />
+              <label htmlFor="name">Navn</label>
+              <input type="text" id="name" name="name" placeholder="Navn" required />
             </div>
             <div className={styles.bookingItem}>
-              <label htmlFor="email">{t('booking_email')}</label>
-              <input type="email" id="email" name="email" placeholder={t('booking_email')} required />
+              <label htmlFor="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="Email" required />
             </div>
             <div className={styles.bookingItem}>
-              <label htmlFor="phone">{t('booking_phone')}</label>
-              <input type="tel" id="phone" name="phone" placeholder={t('booking_phone')} required />
+              <label htmlFor="phone">Telefon nummer</label>
+              <input type="tel" id="phone" name="phone" placeholder="Telefon nummer" required />
             </div>
             <div className={styles.bookingItem}>
-              <label htmlFor="date">{t('booking_date')}</label>
+              <label htmlFor="date">Start dato</label>
               <input type="date" id="date" name="date" required />
             </div>
             <div className={styles.bookingItem}>
-              <label htmlFor="date">{t('booking_date')}</label>
+              <label htmlFor="date">Slutt dato</label>
               <input type="date" id="date" name="date" required />
             </div>
-            <div className={styles.bookingItem}>
-              <label htmlFor="date">{t('booking_dateStart')}</label>
-              <input type="date" id="date" name="date" required />
-            </div>
-            <div className={styles.bookingItem}>
-              <label htmlFor="date">{t('booking_dateEnd')}</label>
-              <input type="date" id="date" name="date" required />
-            </div>
-            <button className={styles.formButton} type="submit">{t('booking_button')}</button>
+            <button className={styles.formButton} type="submit">Send</button>
           </form>
         </div>
       </div>
