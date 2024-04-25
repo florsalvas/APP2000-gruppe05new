@@ -2,13 +2,8 @@
 import React from "react";
 import PropTypes from 'prop-types';
 import styles from './picture.module.css';
-import { useTranslation } from 'react-i18next';
-
-
 
 export default function Picture ({altText, caption}) {
-    const {t} = useTranslation();
-
     return (
         <div className={styles.pictureContainer}>
             <img alt={altText} className={styles.picture} /> 
