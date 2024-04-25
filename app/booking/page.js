@@ -6,6 +6,7 @@ import styles from '../booking/booking.module.css';
 
 export default function BookingPage() {
   const [availableSites, setAvailableSites] = useState([]);
+  const [booking, setBooking] = useState([]);
 
   useEffect(() => {
     async function fetchBookingAndAvailableSites() {

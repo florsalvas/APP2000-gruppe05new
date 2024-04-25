@@ -59,10 +59,12 @@ export const authOptions = {
       }
     },
   },
+  /*
   session: {
     jwt: true,
     maxAge: 2 * 60 * 60
   },
+  */
 };
 
 export const handler = NextAuth(authOptions);
